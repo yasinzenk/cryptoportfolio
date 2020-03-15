@@ -6,3 +6,7 @@
 export {default as Navbar} from './navbar'
 export {default as UserHome} from './user-home'
 export {Login, Signup} from './auth-form'
+export {CryptoContainer} from './CryptoContainer'
+export {AddInvestment} from './AddInvestment'
+export {AllInvestments} from './AllInvestments'
+export {InvestmentLine} from './InvestmentLine'
