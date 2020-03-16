@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 import axios from 'axios'
 import {apiKey} from './../../Utils/Constants'
 import {deleteInvestment} from './../store/cryptoReducer'
+import Button from '@material-ui/core/Button'
+import DeleteIcon from '@material-ui/icons/Delete'
 
 class Investment extends Component {
   constructor() {
@@ -111,9 +113,15 @@ class Investment extends Component {
               </h3>
             </div>
           </div>
-          <button onClick={this.deleteInvestment}>
+          <Button
+            variant="contained"
+            color="secondary"
+            className="deleteButton"
+            startIcon={<DeleteIcon />}
+            onClick={this.deleteInvestment}
+          >
             Delete this investment
-          </button>
+          </Button>
         </div>
       </div>
     )

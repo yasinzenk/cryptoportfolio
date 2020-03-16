@@ -1,7 +1,8 @@
 const images = {
   BTC: 'https://s2.coinmarketcap.com/static/img/coins/32x32/1.png',
   ETH: 'https://s2.coinmarketcap.com/static/img/coins/32x32/1027.png',
-  XRP: 'https://s2.coinmarketcap.com/static/img/coins/32x32/52.png',
+  XRP:
+    'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@9867bdb19da14e63ffbe63805298fa60bf255cdd/svg/white/xrp.svg',
   USDT: 'https://s2.coinmarketcap.com/static/img/coins/32x32/825.png',
   BCH: 'https://s2.coinmarketcap.com/static/img/coins/32x32/1831.png',
   LTC: 'https://s2.coinmarketcap.com/static/img/coins/32x32/2.png',
@@ -11,8 +12,11 @@ const images = {
   XTZ: 'https://s2.coinmarketcap.com/static/img/coins/32x32/2011.png',
   LEO: 'https://s2.coinmarketcap.com/static/img/coins/32x32/3957.png',
   LINK: 'https://s2.coinmarketcap.com/static/img/coins/32x32/1975.png',
-  XLM: 'https://s2.coinmarketcap.com/static/img/coins/32x32/512.png',
+  XLM:
+    'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@9867bdb19da14e63ffbe63805298fa60bf255cdd/svg/white/xlm.svg',
   ADA: 'https://s2.coinmarketcap.com/static/img/coins/32x32/2010.png',
+  USDC:
+    'https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@9867bdb19da14e63ffbe63805298fa60bf255cdd/svg/white/usdc.svg',
   TRX: 'https://s2.coinmarketcap.com/static/img/coins/32x32/1958.png',
   HT: 'https://s2.coinmarketcap.com/static/img/coins/32x32/2502.png',
   XMR: 'https://s2.coinmarketcap.com/static/img/coins/32x32/328.png',

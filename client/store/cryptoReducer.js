@@ -64,7 +64,7 @@ export const getInvestments = () => async dispatch => {
 export const deleteInvestment = id => async dispatch => {
   try {
     const {data} = await axios.delete(`/api/investments/${id}`)
-    dispatch(getInvestments)
+    dispatch(getInvestments())
     history.push('/allInvestments')
   } catch (error) {
     console.log(error)
