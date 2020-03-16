@@ -2,7 +2,9 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import axios from 'axios'
 import {apiKey} from './../../Utils/Constants'
-import {deleteInvestment} from './../store/cryptoReducer'
+import {deleteInvestment, fetchCoinData} from './../store/cryptoReducer'
+import Button from '@material-ui/core/Button'
+import DeleteIcon from '@material-ui/icons/Delete'
 
 class Investment extends Component {
   constructor() {
@@ -32,14 +34,11 @@ class Investment extends Component {
   }
 
   async componentDidMount() {
-    const {data} = await axios.get(
-      'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?CMC_PRO_API_KEY=' +
-        apiKey.key
-    )
+    await this.props.fetchCoinData()
     let coin = {}
     for (let i = 0; i < 20; i++) {
-      if (data.data[i].symbol === this.props.investment.coin) {
-        coin = data.data[i]
+      if (this.props.payload[i].symbol === this.props.investment.coin) {
+        coin = this.props.payload[i]
       }
     }
     this.setState({
@@ -111,9 +110,15 @@ class Investment extends Component {
               </h3>
             </div>
           </div>
-          <button onClick={this.deleteInvestment}>
+          <Button
+            variant="contained"
+            color="secondary"
+            className="deleteButton"
+            startIcon={<DeleteIcon />}
+            onClick={this.deleteInvestment}
+          >
             Delete this investment
-          </button>
+          </Button>
         </div>
       </div>
     )
@@ -122,13 +127,15 @@ class Investment extends Component {
 
 const mapStateToProps = state => {
   return {
-    crypto: state.crypto
+    crypto: state.crypto,
+    payload: state.crypto.payload
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    deleteInvestment: id => dispatch(deleteInvestment(id))
+    deleteInvestment: id => dispatch(deleteInvestment(id)),
+    fetchCoinData: () => dispatch(fetchCoinData())
   }
 }
 

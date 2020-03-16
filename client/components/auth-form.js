@@ -36,7 +36,9 @@ const AuthForm = props => {
         </div>
         {error && error.response && <div> {error.response.data} </div>}
       </form>
-      <a href="/auth/google">{displayName} with Google</a>
+      <div className="modal-body" id="modal-body">
+        You're logged in!
+      </div>
     </div>
   )
 }
@@ -73,6 +75,9 @@ const mapDispatch = dispatch => {
       const password = evt.target.password.value
       const name = evt.target.Name.value
       dispatch(auth(email, password, formName, name))
+      event.target.email.value = ''
+      event.target.password.value = ''
+      event.target.Name.value = ''
     }
   }
 }

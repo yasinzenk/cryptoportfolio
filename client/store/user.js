@@ -40,7 +40,11 @@ export const auth = (email, password, method, name) => async dispatch => {
 
   try {
     dispatch(getUser(res.data))
-    history.push('/crypto')
+    let x = document.getElementById('modal-body')
+    x.className = 'show'
+    await setTimeout(function() {
+      x.className = x.className.replace('show', '')
+    }, 3000)
   } catch (dispatchOrHistoryErr) {
     console.error(dispatchOrHistoryErr)
   }
