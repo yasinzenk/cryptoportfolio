@@ -6,7 +6,7 @@ export class Investment extends Component {
   constructor() {
     super()
     this.state = {
-      coin: 'BTC'
+      coin: ''
     }
     this.handleChangeCoin = this.handleChangeCoin.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)

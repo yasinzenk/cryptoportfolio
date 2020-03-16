@@ -75,6 +75,9 @@ const mapDispatch = dispatch => {
       const password = evt.target.password.value
       const name = evt.target.Name.value
       dispatch(auth(email, password, formName, name))
+      event.target.email.value = ''
+      event.target.password.value = ''
+      event.target.Name.value = ''
     }
   }
 }
