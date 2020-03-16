@@ -2,7 +2,11 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import axios from 'axios'
 import {apiKey} from './../../Utils/Constants'
+
+import {deleteInvestment} from './../store/cryptoReducer'
+
 import {deleteInvestment, fetchCoinData} from './../store/cryptoReducer'
+
 import Button from '@material-ui/core/Button'
 import DeleteIcon from '@material-ui/icons/Delete'
 
